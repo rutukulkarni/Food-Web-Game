@@ -25,9 +25,15 @@ import java.util.Random;
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 {
-    public static final int WIDTH = 1024;
+    
+	private Background bg;
+	
+	public static final int WIDTH = 1024;
     public static final int HEIGHT = 512;
     public static final int MOVESPEED = -5;
+	
+	
+	
     public GamePanel(Context context)
     {
         super(context);
@@ -54,6 +60,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void surfaceCreated(SurfaceHolder holder){
+			bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.bg1));
 
 
     }
@@ -65,9 +72,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     }
 
     public void update()
-
     {
-
+		bg.update();
     }
     @Override
     public void draw(Canvas canvas)
@@ -78,6 +84,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         if(canvas!=null) {
             final int savedState = canvas.save();
 
+            canvas.scale(scaleFactorX, scaleFactorY);
+            bg.draw(canvas);
             canvas.restoreToCount(savedState);
         }
     }
