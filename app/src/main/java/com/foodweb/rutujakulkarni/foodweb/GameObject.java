@@ -1,9 +1,5 @@
 package com.foodweb.rutujakulkarni.foodweb;
 
-/**
- * Created by Rutuja on 03/11/2015.
- */
-
 import android.graphics.Rect;
 
 public abstract class GameObject {

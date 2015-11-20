@@ -1,8 +1,5 @@
 package com.IUB_SoftwareEngineering_Group1.FoodWeb;
 
-/**
- * Created by tk on 10/13/2015.
- */
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 
